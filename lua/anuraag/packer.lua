@@ -1,5 +1,9 @@
 vim.cmd [[packadd packer.nvim]]
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use('wbthomason/packer.nvim')
@@ -9,18 +13,7 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
-
-	use {
-		'sainnhe/everforest',
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- Optionally configure and load the colorscheme
-			-- directly inside the plugin declaration.
-			vim.g.everforest_enable_italic = true
-			vim.cmd.colorscheme('everforest')
-		end
-	}
+	use { "catppuccin/nvim", as = "catppuccin" }
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function()
@@ -45,11 +38,7 @@ return require('packer').startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
-		config = function()
-			require("obsidian").setup()
-		end,
 	})
-
 
 	use('nvim-treesitter/playground')
 	use('theprimeagen/harpoon')
@@ -61,10 +50,8 @@ return require('packer').startup(function(use)
 	use('hrsh7th/cmp-nvim-lsp')
 	use('dcampos/nvim-snippy')
 
-	use ("nvim-lua/plenary.nvim")	
 
-	
-
+	use('tweekmonster/django-plus.vim')
 	
 end)
 

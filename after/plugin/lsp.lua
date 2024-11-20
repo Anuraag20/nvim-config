@@ -36,6 +36,8 @@ require('lspconfig').pyright.setup({})
 ---
 -- Autocompletion setup
 ---
+
+
 local cmp = require('cmp')
 
 cmp.setup({

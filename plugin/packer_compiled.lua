@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/anuraag/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/home/anuraag/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/home/anuraag/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/home/anuraag/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/anuraag/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
+local package_path_str = "/home/anuraag/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?.lua;/home/anuraag/.cache/nvim/packer_hererocks/2.1.1713484068/share/lua/5.1/?/init.lua;/home/anuraag/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?.lua;/home/anuraag/.cache/nvim/packer_hererocks/2.1.1713484068/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/anuraag/.cache/nvim/packer_hererocks/2.1.1713484068/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,16 +74,20 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  catppuccin = {
+    loaded = true,
+    path = "/home/anuraag/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/anuraag/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  everforest = {
-    config = { "\27LJ\2\ni\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\15everforest\16colorscheme\bcmd\29everforest_enable_italic\6g\bvim\0" },
+  ["django-plus.vim"] = {
     loaded = true,
-    path = "/home/anuraag/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
+    path = "/home/anuraag/.local/share/nvim/site/pack/packer/start/django-plus.vim",
+    url = "https://github.com/tweekmonster/django-plus.vim"
   },
   harpoon = {
     loaded = true,
@@ -119,7 +123,6 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\n¨\1\0\0\5\0\a\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\2B\0\2\1K\0\1\0\15workspaces\1\0\0\1\0\2\tpath\18~/vaults/work\tname\twork\1\0\2\tpath\22~/vaults/personal\tname\rpersonal\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/home/anuraag/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -152,14 +155,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: obsidian.nvim
-time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\n¨\1\0\0\5\0\a\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\2B\0\2\1K\0\1\0\15workspaces\1\0\0\1\0\2\tpath\18~/vaults/work\tname\twork\1\0\2\tpath\22~/vaults/personal\tname\rpersonal\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
-time([[Config for obsidian.nvim]], false)
--- Config for: everforest
-time([[Config for everforest]], true)
-try_loadstring("\27LJ\2\ni\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\15everforest\16colorscheme\bcmd\29everforest_enable_italic\6g\bvim\0", "config", "everforest")
-time([[Config for everforest]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
