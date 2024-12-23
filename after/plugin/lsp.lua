@@ -32,6 +32,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- These are just examples. Replace them with the language
 -- servers you have installed in your system
 require('lspconfig').pyright.setup({})
+require('lspconfig').clangd.setup({
+	cmd = {'clangd-12'}
+})
+require('lspconfig').ts_ls.setup({})
+
 
 ---
 -- Autocompletion setup

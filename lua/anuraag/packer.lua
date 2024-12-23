@@ -30,8 +30,6 @@ return require('packer').startup(function(use)
 		end
 	}
 
-
-
 	use({
 		"epwalsh/obsidian.nvim",
 		tag = "*",  -- recommended, use latest release instead of latest commit
@@ -39,6 +37,20 @@ return require('packer').startup(function(use)
 			"nvim-lua/plenary.nvim",
 		},
 	})
+	use {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = { 
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+		config = function()
+			require("neo-tree").setup({})
+		end
+
+	}
 
 	use('nvim-treesitter/playground')
 	use('theprimeagen/harpoon')
@@ -50,7 +62,8 @@ return require('packer').startup(function(use)
 	use('hrsh7th/cmp-nvim-lsp')
 	use('dcampos/nvim-snippy')
 
-
+	use ('mfussenegger/nvim-dap')
+	use ('mfussenegger/nvim-dap-python')
 	use('tweekmonster/django-plus.vim')
 	
 end)
